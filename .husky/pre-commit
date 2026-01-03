@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+set -euo pipefail
+
+pnpm -C web lint
+pnpm -C web type-check
+pnpm -C web format
+
+pnpm -C server lint
+pnpm -C server type-check
+pnpm -C server format
